@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<title>Aplikasi Pembelajaran BM - K1 Huruf Vokal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{--blue:#2563eb;--green:#16a34a;--red:#dc2626;--orange:#f59e0b;--text:#172554}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family: "Comic Sans MS","Comic Sans",cursive;color:var(--text);overflow-x:hidden;background:radial-gradient(circle at 10% 10%,#fde68a 0 8%,transparent 9%),radial-gradient(circle at 90% 20%,#bfdbfe 0 10%,transparent 11%),linear-gradient(135deg,#7dd3fc,#fef3c7,#fbcfe8);animation:bgMove 10s ease-in-out infinite alternate}@keyframes bgMove{from{background-position:0 0,0 0,0 0}to{background-position:40px 20px,-30px 50px,0 0}}.cloud{position:fixed;width:140px;height:45px;background:white;border-radius:999px;opacity:.75;z-index:0;animation:floatCloud 18s linear infinite}.cloud:before,.cloud:after{content:"";position:absolute;background:white;border-radius:50%}.cloud:before{width:55px;height:55px;left:20px;top:-25px}.cloud:after{width:70px;height:70px;right:15px;top:-35px}.c1{top:60px;left:-180px}.c2{top:200px;left:-240px;animation-duration:25s;transform:scale(.8)}.c3{top:420px;left:-300px;animation-duration:30s;transform:scale(1.1)}@keyframes floatCloud{from{transform:translateX(0)}to{transform:translateX(120vw)}}.app{position:relative;z-index:1;max-width:900px;margin:auto;padding:18px}.header{text-align:center;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border:3px solid rgba(255,255,255,.9);box-shadow:0 12px 30px rgba(0,0,0,.18);border-radius:28px;padding:22px;margin-top:10px;animation:popIn .6s ease}@keyframes popIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}h1{margin:0;font-size:34px;color:#1d4ed8;text-shadow:2px 2px 0 #bfdbfe}.subtitle{margin:8px 0 0;font-weight:bold;color:#7c3aed}.card{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:3px solid rgba(255,255,255,.9);border-radius:26px;padding:18px;margin-top:16px;box-shadow:0 12px 28px rgba(0,0,0,.14)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-weight:bold;margin-bottom:6px}input{width:100%;padding:14px;border-radius:16px;border:2px solid #c7d2fe;font-size:16px;outline:none;transition:.2s}input:focus{border-color:#6366f1;box-shadow:0 0 0 4px #e0e7ff}input[readonly]{background:#eff6ff;color:#1e3a8a;font-weight:bold}.pill{display:inline-block;background:#ede9fe;color:#5b21b6;border:2px solid #c4b5fd;padding:8px 13px;border-radius:999px;font-weight:bold;margin:4px}.statusBox{font-weight:bold;text-align:center;padding:13px;border-radius:16px;margin-top:12px;display:none}.ok{background:#dcfce7;color:#166534;border:2px solid #86efac}.warn{background:#fef3c7;color:#92400e;border:2px solid #fcd34d}.bad{background:#fee2e2;color:#991b1b;border:2px solid #fca5a5}.progressWrap{height:24px;background:#e5e7eb;border-radius:999px;overflow:hidden;border:2px solid white;margin-top:12px}.progressBar{height:100%;width:0%;background:linear-gradient(90deg,#22c55e,#a3e635,#facc15);border-radius:999px;transition:width .5s ease}.scoreBox{text-align:center;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:3px solid #bfdbfe;border-radius:24px;padding:18px;margin-top:16px;font-size:20px;font-weight:bold;box-shadow:0 8px 18px rgba(37,99,235,.15)}.item{position:relative;overflow:hidden;border:4px solid #e0e7ff;border-radius:30px;padding:20px;margin-top:18px;background:radial-gradient(circle at 15% 20%,#fef08a 0 45px,transparent 46px),radial-gradient(circle at 85% 15%,#bae6fd 0 45px,transparent 46px),white;box-shadow:0 14px 26px rgba(0,0,0,.13);transition:.25s}.item:hover{transform:translateY(-3px)}.item.done{border-color:#22c55e;background:radial-gradient(circle at 15% 20%,#bbf7d0 0 50px,transparent 51px),radial-gradient(circle at 85% 15%,#dcfce7 0 50px,transparent 51px),white}.item.wrong{border-color:#fb7185;background:radial-gradient(circle at 15% 20%,#fecdd3 0 50px,transparent 51px),radial-gradient(circle at 85% 15%,#fee2e2 0 50px,transparent 51px),white}.item.practice{border-color:#f59e0b}.instruction{text-align:center;font-weight:bold;color:#334155}.bigLetter{width:145px;height:145px;margin:14px auto;display:flex;align-items:center;justify-content:center;border-radius:36px;font-size:78px;font-weight:900;color:white;background:linear-gradient(135deg,#2563eb,#7c3aed,#ec4899);text-shadow:3px 4px 0 rgba(0,0,0,.18);box-shadow:0 14px 25px rgba(124,58,237,.35);animation:bounceLetter 1.4s ease-in-out infinite}@keyframes bounceLetter{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}.resultLine{text-align:center;font-weight:bold;min-height:30px;margin-top:10px;font-size:16px}button{width:100%;padding:15px;border:0;border-radius:18px;font-size:17px;font-weight:bold;cursor:pointer;transition:.2s;box-shadow:0 8px 16px rgba(0,0,0,.16)}button:hover{transform:translateY(-2px) scale(1.01)}button:active{transform:scale(.98)}.listen{color:white;background:linear-gradient(135deg,#7c3aed,#ec4899);margin-bottom:10px}.speak{color:white;background:linear-gradient(135deg,#2563eb,#0ea5e9)}.practiceBtn{color:white;background:linear-gradient(135deg,#f59e0b,#f97316)}.save{color:white;background:linear-gradient(135deg,#16a34a,#22c55e);font-size:19px}.backup{color:white;background:linear-gradient(135deg,#f59e0b,#f97316);display:none}.emergency{color:white;background:linear-gradient(135deg,#dc2626,#fb7185);display:none}.disabled{opacity:.55;cursor:not-allowed}.micPulse{animation:micPulse .8s ease-in-out infinite}@keyframes micPulse{0%{box-shadow:0 0 0 0 rgba(37,99,235,.6)}70%{box-shadow:0 0 0 16px rgba(37,99,235,0)}100%{box-shadow:0 0 0 0 rgba(37,99,235,0)}}
+.traceZone{margin-top:14px;background:linear-gradient(135deg,#fff7ed,#eff6ff);border:3px solid #fbbf24;border-radius:24px;padding:14px;position:relative;overflow:hidden}.traceTitle{text-align:center;font-weight:900;color:#92400e;margin-bottom:8px}.traceBoard{position:relative;max-width:420px;margin:0 auto}.traceCanvas{width:100%;height:240px;background:#22c7ee;border:10px solid #f59e0b;border-radius:26px;box-shadow:inset 0 0 0 6px rgba(255,255,255,.22),0 12px 20px rgba(0,0,0,.16);touch-action:none;cursor:crosshair}.pencilBuddy{position:absolute;right:8px;top:8px;font-size:34px;animation:pencilDance 1.2s ease-in-out infinite;pointer-events:none}@keyframes pencilDance{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-7px) rotate(8deg)}}.canvasBtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.clearCanvas{color:white;background:linear-gradient(135deg,#64748b,#334155)}.demoTrace{color:white;background:linear-gradient(135deg,#06b6d4,#2563eb)}
+.small{font-size:13px;color:#475569;text-align:center;line-height:1.5}.hidden{display:none}.reward{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.8);z-index:999;background:white;border:5px solid #facc15;color:#1d4ed8;border-radius:28px;padding:26px 34px;font-size:28px;font-weight:900;box-shadow:0 18px 40px rgba(0,0,0,.3);display:none;text-align:center;animation:rewardPop .9s ease}@keyframes rewardPop{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}45%{transform:translate(-50%,-50%) scale(1.12);opacity:1}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}.confetti{position:fixed;top:-20px;width:12px;height:18px;z-index:998;animation:fall 1.5s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}@media(max-width:650px){.grid{grid-template-columns:1fr}h1{font-size:28px}.bigLetter{width:125px;height:125px;font-size:66px}.app{padding:12px}}
+</style>
+</head>
+<body>
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div id="reward" class="reward">Hebat! 🌟</div>
+<div class="app"><div class="header">
+
+  <!-- KMJ-LITE LOGO -->
+  <div style="margin-bottom:12px">
+<img src="https://raw.githubusercontent.com/MJKHAW/bm-year1-app-V3-voice-upgrade-V5-LOGIN_Font_logo/main/Untitled%20design.png"
+     style="height:70px;margin-bottom:6px">
+
+    <div style="font-weight:bold;color:#7c3aed;font-size:16px">
+      KEMAHIRAN MEMBACA JAUHARI-Learning Integrated Teaching Environment
+    </div>
+
+    <div style="font-size:14px;color:#475569">
+      Dicipta oleh Cikgu Khaw Mee Jia
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <h1>🎮 Aplikasi Pembelajaran BM</h1>
+  <p class="subtitle">K1 - Huruf Vokal</p>
+
+</div>
+<div class="card"><div class="grid"><div><label>PIN Murid</label><input id="pin" placeholder="Contoh: 8106" oninput="autoFillStudent()"></div><div><label>Kod Sekolah</label><input id="kodSekolah" placeholder="PH1 / BBC0051" oninput="autoFillStudent()"></div><div><label>Nama Murid</label><input id="nama" readonly></div><div><label>Kelas</label><input id="kelas" readonly></div></div><div id="loginMsg" class="statusBox"></div></div>
+<div class="card"><div style="text-align:center"><span class="pill">🌈 Unit 1</span><span class="pill">🎯 K1</span><span class="pill">🔤 Huruf Vokal</span></div><p class="small">Tekan <b>Sebut Sekarang</b>. Murid diberi <b>3 percubaan</b> untuk setiap huruf. Jika mana-mana percubaan betul, murid mendapat markah. Selepas 3 percubaan, murid boleh berlatih tetapi markah tidak bertambah.</p><div id="speechWarning" class="statusBox warn" style="display:block">Nota: Fungsi suara memerlukan internet dan biasanya berfungsi paling baik di Google Chrome / Microsoft Edge.</div></div>
+<div class="scoreBox">🏆 Markah: <span id="score">0</span> / <span id="total">5</span><br>⭐ Peratus: <span id="percentage">0</span>%<br>🎖️ Status: <span id="status">BELUM MENGUASAI</span><div class="progressWrap"><div id="progressBar" class="progressBar"></div></div></div>
+<div id="activity"></div>
+<div class="card">
+  <label>Rakaman Suara Murid</label>
+  <button type="button" class="speak" onclick="openVocaroo()">🎤 Rakam Suara di Vocaroo</button>
+  <p class="small">Langkah: Klik butang merah ini → rakam suara → klik Save & Share → salin link → tampal di bawah.</p>
+
+  <label>Link Vocaroo</label>
+  <input id="vocaroo" placeholder="Tampal link Vocaroo di sini">
+
+  <button class="save" onclick="submitResult()">💾 Simpan Markah</button>
+  <button id="backupBtn" class="backup" onclick="resendResult()">🔁 Hantar Semula Markah</button>
+  <button id="emergencyBtn" class="emergency" onclick="openBackupForm()">🆘 Buka Borang Sandaran</button>
+  <div id="message" class="statusBox"></div>
+  <p class="small">Jika nama tidak muncul dalam senarai cikgu, klik “Hantar Semula Markah”.</p>
+</div></div>
+<iframe name="hidden_iframe" style="display:none"></iframe>
+<script>
+const GOOGLE_FORM_ACTION="https://docs.google.com/forms/d/e/1FAIpQLSclRTb7qu_zCWncXfr96BFU_BSXJDhiDwBFo8yq462Ge3uIHQ/formResponse";
+const GOOGLE_FORM_VIEW="https://docs.google.com/forms/d/e/1FAIpQLSclRTb7qu_zCWncXfr96BFU_BSXJDhiDwBFo8yq462Ge3uIHQ/viewform";
+const ENTRY={pin:"entry.778747532",kodSekolah:"entry.1805351743",nama:"entry.1092728077",kelas:"entry.1314632048",score:"entry.776686397",total:"entry.1798402421",percentage:"entry.836687957",status:"entry.1559204106",vocaroo:"entry.494914330",masa:"entry.174364908",unit:"entry.1145985719",kodKemahiran:"entry.1936478213",namaKemahiran:"entry.47186875"};
+const UNIT="Unit 1",KOD_KEMAHIRAN="K1",NAMA_KEMAHIRAN="Huruf Vokal";
+const ITEMS=[{id:"a",target:"a",display:"a"},{id:"e",target:"e",display:"e"},{id:"i",target:"i",display:"i"},{id:"o",target:"o",display:"o"},{id:"u",target:"u",display:"u"}];
+const TOTAL=ITEMS.length;
+const STUDENTS={"8106":{nama:"HAZEL TAN WEI EN",kelas:"1P"},"6287":{nama:"LIM CHEN YU",kelas:"1P"},"7062":{nama:"CLARISSA LIM YUN XI",kelas:"1P"},"7175":{nama:"MC KENZIE ESPER LAU",kelas:"1P"},"4324":{nama:"GEVIN CHAN",kelas:"1I"},"1734":{nama:"JAY NG PENG YU",kelas:"1I"},"1861":{nama:"TAN SUE NING",kelas:"1I"},"5608":{nama:"LIM YUAN CHENG",kelas:"1H"},"8678":{nama:"LIM JIA SHUEN",kelas:"1S"},"7602":{nama:"YONG JIA YING",kelas:"1T"},"8267":{nama:"TAN KAH WEI KRISTIAN",kelas:"1U"},"9760":{nama:"EMMA ANG JIA XIN",kelas:"1K"},"5101":{nama:"LIM QI XUAN",kelas:"1K"},"4743":{nama:"TOA CHEN HONG",kelas:"1K"},"8137":{nama:"LANDEN SAW SHINRUI",kelas:"1G"},"8961":{nama:"CASSANDRA LIM YUN XIN",kelas:"1P"},"6865":{nama:"JOELLE CHUA KHER XIN",kelas:"1I"},"4947":{nama:"KEE WEI JIE",kelas:"1W"},"3798":{nama:"OSMOND LEE LONG ZED",kelas:"1W"},"3176":{nama:"TAN YEE WEN",kelas:"1W"},"2307":{nama:"LOW ZHI YU",kelas:"1A"},"2464":{nama:"ANG KAI XIN",kelas:"1S"},"6431":{nama:"JAI RUDRASHAN DEVENDRAN",kelas:"1S"},"3574":{nama:"CHUA EE CHEN",kelas:"1T"},"6581":{nama:"ANDIE PHUA",kelas:"1U"}};
+let attempts={},completed={},scores={},lastData=null,resendCount=0; const MAX_ATTEMPTS=3;
+function normalizeSchoolCode(code){const c=code.trim().toUpperCase();return(c==="PH1"||c==="BBC0051")?"PH1":c}function setBox(id,text,type){const el=document.getElementById(id);el.innerText=text;el.className="statusBox "+type;el.style.display="block"}function showMessage(text,type){setBox("message",text,type)}
+function showReward(text){const reward=document.getElementById("reward");reward.innerHTML=text;reward.style.display="block";createConfetti();setTimeout(()=>{reward.style.display="none"},1300)}
+function createConfetti(){const colors=["#ef4444","#f97316","#facc15","#22c55e","#38bdf8","#8b5cf6","#ec4899"];for(let i=0;i<40;i++){const c=document.createElement("div");c.className="confetti";c.style.left=Math.random()*100+"vw";c.style.background=colors[Math.floor(Math.random()*colors.length)];c.style.animationDuration=(1.1+Math.random()*1.2)+"s";c.style.transform="rotate("+(Math.random()*360)+"deg)";document.body.appendChild(c);setTimeout(()=>c.remove(),2500)}}
+function autoFillStudent(){const pin=document.getElementById("pin").value.trim();const kod=normalizeSchoolCode(document.getElementById("kodSekolah").value);if(kod==="PH1"&&STUDENTS[pin]){document.getElementById("nama").value=STUDENTS[pin].nama;document.getElementById("kelas").value=STUDENTS[pin].kelas;setBox("loginMsg","✅ Nama murid berjaya dijumpai. Selamat belajar!","ok")}else{document.getElementById("nama").value="";document.getElementById("kelas").value="";if(pin.length>=4&&kod.length>=2)setBox("loginMsg","❌ PIN atau Kod Sekolah tidak dijumpai.","bad")}}
+function renderActivity(){
+  document.getElementById("total").innerText=TOTAL;
+  const wrap=document.getElementById("activity");
+  wrap.innerHTML=ITEMS.map((it,idx)=>`<div class="item" id="card_${it.id}">
+    <div class="instruction">🎤 Item ${idx+1}: Sebut huruf ini. Anda ada 3 percubaan.</div>
+    <div class="bigLetter">${it.display}</div>
+    <button class="speak" id="btn_${it.id}" onclick="assessFirstAttempt('${it.id}')">🎙️ Sebut Sekarang</button>
+    <button class="practiceBtn hidden" id="practice_${it.id}" onclick="practiceOnly('${it.id}')">🔁 Latihan Semula (Tiada Markah)</button>
+    <div class="resultLine" id="result_${it.id}"></div>
+  </div>`).join("");
+}
+function getExampleLabel(id){return {a:"a - aah",e:"e - eh / uh",i:"i - ee",o:"o - oh",u:"u - oo"}[id]||id}
+function speakExample(id){
+  const examples={
+    a:{text:"a, aah",label:"a - aah"},
+    e:{text:"e, eh, uh",label:"e - eh atau uh"},
+    i:{text:"i, ee",label:"i - ee"},
+    o:{text:"o, oh",label:"o - oh"},
+    u:{text:"u, oo",label:"u - oo"}
+  };
+  const ex=examples[id]||{text:id,label:id};
+  if(!('speechSynthesis' in window)){
+    document.getElementById(`result_${id}`).innerText="Peranti ini tidak menyokong audio contoh. Cikgu boleh sebut dahulu untuk murid ikut.";
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const msg=new SpeechSynthesisUtterance(ex.text);
+  msg.lang="ms-MY";
+  msg.rate=.55;
+  msg.pitch=1.15;
+  msg.volume=1;
+  document.getElementById(`result_${id}`).innerText=`🔊 Contoh sebutan: ${ex.label}. Kemudian tekan Sebut Sekarang.`;
+  window.speechSynthesis.speak(msg);
+}
+function initAllTraceCanvas(){ITEMS.forEach(it=>initTraceCanvas(it.id))}
+function drawGuide(ctx,letter){
+  ctx.clearRect(0,0,420,240);
+  const grad=ctx.createLinearGradient(0,0,420,240);grad.addColorStop(0,"#20c4ee");grad.addColorStop(1,"#0ea5e9");ctx.fillStyle=grad;ctx.fillRect(0,0,420,240);
+  ctx.save();ctx.strokeStyle="rgba(255,255,255,.55)";ctx.lineWidth=3;ctx.setLineDash([18,12]);ctx.beginPath();ctx.moveTo(65,60);ctx.lineTo(355,60);ctx.moveTo(65,120);ctx.lineTo(355,120);ctx.moveTo(65,190);ctx.lineTo(355,190);ctx.stroke();ctx.restore();
+  ctx.save();ctx.globalAlpha=.18;ctx.fillStyle="#ffffff";ctx.font="bold 175px Comic Sans MS, cursive";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(letter,210,137);ctx.restore();
+  ctx.save();ctx.strokeStyle="#111827";ctx.lineWidth=4;ctx.setLineDash([10,10]);ctx.globalAlpha=.9;ctx.beginPath();ctx.moveTo(280,55);ctx.lineTo(280,195);ctx.stroke();ctx.restore();
+}
+function initTraceCanvas(id){
+  const canvas=document.getElementById(`canvas_${id}`);if(!canvas||canvas.dataset.ready)return;canvas.dataset.ready="1";
+  const ctx=canvas.getContext("2d");canvas.ctx=ctx;drawGuide(ctx,id);
+  let drawing=false;
+  function pos(e){const r=canvas.getBoundingClientRect();const t=e.touches?e.touches[0]:e;return{x:(t.clientX-r.left)*(canvas.width/r.width),y:(t.clientY-r.top)*(canvas.height/r.height)}}
+  function start(e){drawing=true;const p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault()}
+  function move(e){if(!drawing)return;const p=pos(e);ctx.lineWidth=12;ctx.lineCap="round";ctx.lineJoin="round";ctx.strokeStyle="#111827";ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault()}
+  function end(){drawing=false}
+  canvas.addEventListener("mousedown",start);canvas.addEventListener("mousemove",move);window.addEventListener("mouseup",end);
+  canvas.addEventListener("touchstart",start,{passive:false});canvas.addEventListener("touchmove",move,{passive:false});canvas.addEventListener("touchend",end);
+}
+function clearTraceCanvas(id){const canvas=document.getElementById(`canvas_${id}`);if(canvas)drawGuide(canvas.getContext("2d"),id)}
+function showTraceDemo(id){
+  const canvas=document.getElementById(`canvas_${id}`);if(!canvas)return;const ctx=canvas.getContext("2d");drawGuide(ctx,id);
+  const paths={
+    a:[[255,145],[245,112],[215,95],[178,107],[157,138],[164,172],[196,187],[231,176],[253,145],[278,187]],
+    e:[[270,128],[218,105],[172,122],[157,154],[176,184],[222,188],[259,168]],
+    i:[[210,82],[210,82],[210,118],[210,190]],
+    o:[[210,95],[165,115],[150,155],[174,188],[221,190],[263,163],[258,120],[210,95]],
+    u:[[155,105],[155,158],[173,188],[214,188],[252,160],[252,105]]
+  };
+  const pts=paths[id]||paths.a;let i=0;ctx.lineWidth=12;ctx.lineCap="round";ctx.lineJoin="round";ctx.strokeStyle="#111827";ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);
+  const timer=setInterval(()=>{i++;if(i>=pts.length){clearInterval(timer);return}ctx.lineTo(pts[i][0],pts[i][1]);ctx.stroke();},170);
+}
+function getRecognition(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return null;const rec=new SR();rec.lang="ms-MY";rec.interimResults=false;rec.maxAlternatives=3;return rec}function normalizeSpeech(s){return(s||"").toLowerCase().replace(/[^a-z]/g,"").trim()}
+function isCorrectSpeech(transcript,target){const raw=normalizeSpeech(transcript);const targetNorm=normalizeSpeech(target);if(!raw)return false;const accepted={a:["a","ah"],e:["e","eh"],i:["i","ee"],o:["o","oh"],u:["u","oo"]};if(accepted[targetNorm])return accepted[targetNorm].includes(raw);return raw===targetNorm}
+function assessFirstAttempt(id){
+  if(completed[id]){
+    document.getElementById(`result_${id}`).innerText="Anda telah selesai 3 percubaan / sudah betul. Latihan semula tidak menambah markah.";
+    document.getElementById(`practice_${id}`).classList.remove("hidden");
+    return;
+  }
+  startSpeechCheck(id,true);
+}
+function practiceOnly(id){startSpeechCheck(id,false)}
+function startSpeechCheck(id,isScored){
+  const item=ITEMS.find(x=>x.id===id);
+  const rec=getRecognition();
+  const resultEl=document.getElementById(`result_${id}`);
+  const btn=document.getElementById(`btn_${id}`);
+  if(!rec){
+    resultEl.innerText="Maaf, peranti ini belum menyokong semakan suara. Sila guna Chrome atau Edge.";
+    document.getElementById(`card_${id}`).classList.add("wrong");
+    return;
+  }
+  if(isScored){
+    const used=attempts[id]||0;
+    if(used>=MAX_ATTEMPTS || completed[id]){
+      resultEl.innerText="Anda telah guna 3 percubaan. Latihan sahaja selepas ini.";
+      document.getElementById(`practice_${id}`).classList.remove("hidden");
+      return;
+    }
+    resultEl.innerText=`🎧 Sila sebut sekarang... Percubaan ${used+1}/3`;
+  }else{
+    resultEl.innerText="🎧 Latihan sahaja. Sila sebut sekarang...";
+  }
+  btn.classList.add("disabled","micPulse");
+  btn.disabled=true;
+  rec.onresult=function(event){
+    let transcript="";
+    try{transcript=event.results[0][0].transcript||""}catch(e){}
+    const correct=isCorrectSpeech(transcript,item.target);
+    const card=document.getElementById(`card_${id}`);
+    if(isScored){
+      attempts[id]=(attempts[id]||0)+1;
+      const used=attempts[id];
+      if(correct){
+        scores[id]=1;
+        completed[id]=true;
+        card.classList.add("done");
+        card.classList.remove("wrong");
+        document.getElementById(`practice_${id}`).classList.remove("hidden");
+        resultEl.innerText=`🌟 Betul! Markah diberi. Percubaan ${used}/3. Sistem dengar: “${transcript}”.`;
+        showReward("🌟 Hebat! Jawapan Betul!");
+      }else{
+        if(used>=MAX_ATTEMPTS){
+          scores[id]=0;
+          completed[id]=true;
+          card.classList.add("wrong");
+          card.classList.remove("done");
+          document.getElementById(`practice_${id}`).classList.remove("hidden");
+          resultEl.innerText=`💪 Tidak mengapa. 3 percubaan telah digunakan. Markah item ini 0. Sistem dengar: “${transcript}”.`;
+        }else{
+          card.classList.add("practice");
+          resultEl.innerText=`💪 Cuba lagi. Percubaan ${used}/3 telah digunakan. Sistem dengar: “${transcript}”.`;
+        }
+      }
+      updateScore();
+    }else{
+      card.classList.add("practice");
+      resultEl.innerText=correct?`😊 Latihan bagus! Kali ini betul, tetapi markah tidak ditambah.`:`💪 Latihan lagi ya. Cuba sebut dengan lebih jelas.`;
+    }
+  };
+  rec.onerror=function(){
+    if(isScored){
+      attempts[id]=(attempts[id]||0)+1;
+      const used=attempts[id];
+      if(used>=MAX_ATTEMPTS){
+        scores[id]=0;
+        completed[id]=true;
+        document.getElementById(`practice_${id}`).classList.remove("hidden");
+        document.getElementById(`card_${id}`).classList.add("wrong");
+        resultEl.innerText="Sistem tidak dapat dengar dengan jelas. 3 percubaan telah digunakan. Markah item ini 0.";
+      }else{
+        resultEl.innerText=`Sistem tidak dapat dengar dengan jelas. Sila cuba lagi. Percubaan ${used}/3 telah digunakan.`;
+      }
+      updateScore();
+    }else{
+      resultEl.innerText="Sistem tidak dapat dengar dengan jelas. Sila cuba latihan semula.";
+    }
+  };
+  rec.onend=function(){btn.classList.remove("disabled","micPulse");btn.disabled=false};
+  rec.start();
+}
+function updateScore(){const score=Object.values(scores).reduce((a,b)=>a+Number(b||0),0);const percentage=Math.round((score/TOTAL)*100);let status="BELUM MENGUASAI";if(percentage>=80)status="BERJAYA";else if(percentage>=50)status="HAMPIR BERJAYA";document.getElementById("score").innerText=score;document.getElementById("percentage").innerText=percentage;document.getElementById("status").innerText=status;document.getElementById("progressBar").style.width=percentage+"%"}
+function getData(){const pin=document.getElementById("pin").value.trim();const kodSekolah=normalizeSchoolCode(document.getElementById("kodSekolah").value);const nama=document.getElementById("nama").value.trim();const kelas=document.getElementById("kelas").value.trim();const vocaroo=document.getElementById("vocaroo").value.trim();const score=document.getElementById("score").innerText;const percentage=document.getElementById("percentage").innerText;const status=document.getElementById("status").innerText;if(!pin||!kodSekolah||!nama||!kelas){showMessage("Sila masukkan PIN dan Kod Sekolah yang betul.","bad");return null}if(Object.keys(completed).length<TOTAL){showMessage("Sila lengkapkan semua item dahulu. Setiap huruf perlu betul atau habis 3 percubaan.","bad");return null}if(!vocaroo){showMessage("Sila paste Vocaroo Link dahulu.","bad");return null}return{pin,kodSekolah,nama,kelas,score,total:TOTAL,percentage,status,vocaroo,masa:new Date().toLocaleString("ms-MY"),unit:UNIT,kodKemahiran:KOD_KEMAHIRAN,namaKemahiran:NAMA_KEMAHIRAN}}
+function addInput(form,name,value){const input=document.createElement("input");input.name=name;input.value=value;form.appendChild(input)}function sendToGoogleForm(data){const form=document.createElement("form");form.action=GOOGLE_FORM_ACTION;form.method="POST";form.target="hidden_iframe";form.style.display="none";addInput(form,ENTRY.pin,data.pin);addInput(form,ENTRY.kodSekolah,data.kodSekolah);addInput(form,ENTRY.nama,data.nama);addInput(form,ENTRY.kelas,data.kelas);addInput(form,ENTRY.score,data.score);addInput(form,ENTRY.total,data.total);addInput(form,ENTRY.percentage,data.percentage);addInput(form,ENTRY.status,data.status);addInput(form,ENTRY.vocaroo,data.vocaroo);addInput(form,ENTRY.masa,data.masa);addInput(form,ENTRY.unit,data.unit);addInput(form,ENTRY.kodKemahiran,data.kodKemahiran);addInput(form,ENTRY.namaKemahiran,data.namaKemahiran);document.body.appendChild(form);form.submit();document.body.removeChild(form)}
+function submitResult(){const data=getData();if(!data)return;lastData=data;resendCount=0;localStorage.setItem("BM_K1_BACKUP",JSON.stringify(data));showMessage("Sedang cuba hantar markah...","warn");try{sendToGoogleForm(data);setTimeout(()=>{showMessage("Percubaan hantar selesai. Jika nama tiada dalam senarai cikgu, klik Hantar Semula Markah.","warn");document.getElementById("backupBtn").style.display="block";document.getElementById("emergencyBtn").style.display="none"},2500)}catch(e){showMessage("Gagal dihantar. Sila klik Hantar Semula Markah.","bad");document.getElementById("backupBtn").style.display="block"}}
+function resendResult(){if(!lastData){const saved=localStorage.getItem("BM_K1_BACKUP");if(saved)lastData=JSON.parse(saved)}if(!lastData){showMessage("Tiada data backup dijumpai.","bad");return}resendCount++;showMessage("Sedang hantar semula markah...","warn");try{sendToGoogleForm(lastData);setTimeout(()=>{showMessage("Percubaan hantar semula selesai. Jika masih tiada, klik Buka Google Form Backup.","warn");if(resendCount>=2)document.getElementById("emergencyBtn").style.display="block"},2500)}catch(e){showMessage("Masih gagal. Sila guna Google Form Backup.","bad");document.getElementById("emergencyBtn").style.display="block"}}
+function openBackupForm(){if(!lastData){const saved=localStorage.getItem("BM_K1_BACKUP");if(saved)lastData=JSON.parse(saved)}let url=GOOGLE_FORM_VIEW+"?usp=pp_url";if(lastData){url+="&"+ENTRY.pin+"="+encodeURIComponent(lastData.pin);url+="&"+ENTRY.kodSekolah+"="+encodeURIComponent(lastData.kodSekolah);url+="&"+ENTRY.nama+"="+encodeURIComponent(lastData.nama);url+="&"+ENTRY.kelas+"="+encodeURIComponent(lastData.kelas);url+="&"+ENTRY.score+"="+encodeURIComponent(lastData.score);url+="&"+ENTRY.total+"="+encodeURIComponent(lastData.total);url+="&"+ENTRY.percentage+"="+encodeURIComponent(lastData.percentage);url+="&"+ENTRY.status+"="+encodeURIComponent(lastData.status);url+="&"+ENTRY.vocaroo+"="+encodeURIComponent(lastData.vocaroo);url+="&"+ENTRY.masa+"="+encodeURIComponent(lastData.masa);url+="&"+ENTRY.unit+"="+encodeURIComponent(lastData.unit);url+="&"+ENTRY.kodKemahiran+"="+encodeURIComponent(lastData.kodKemahiran);url+="&"+ENTRY.namaKemahiran+"="+encodeURIComponent(lastData.namaKemahiran)}window.open(url,"_blank")}
+function openVocaroo(){
+  window.open("https://vocaroo.com/", "_blank");
+}
+
+renderActivity();updateScore();
+</script>
+</body>
+</html>
+
+
+
